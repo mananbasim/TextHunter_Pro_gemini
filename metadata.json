@@ -1,0 +1,7 @@
+{
+  "name": "ScreenText Copy & Save",
+  "description": "An APK-inspired tool to extract text from screenshots and photos using AI and save them for later use.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

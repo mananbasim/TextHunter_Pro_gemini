@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>TextHunter Pro</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#3B82F6">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#3B82F6",
+            purple: "#8B5CF6",
+            accent: "#10B981",
+            "background-light": "#F8FAFC",
+            "background-dark": "#0F172A",
+            "surface-dark": "#1E293B",
+            "surface-light": "#FFFFFF",
+            "neon-cyan": "#00f2ff",
+            "neon-purple": "#7000ff",
+          },
+          fontFamily: {
+            display: ["Inter", "sans-serif"],
+            mono: ["'JetBrains Mono'", "monospace"],
+            outfit: ["Outfit", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "1rem",
+            'ios': "1.5rem",
+          },
+        },
+      },
+    };
+  </script>
+  <style type="text/tailwindcss">
+    :root {
+      --primary-neon: #00f2ff;
+      --accent-purple: #7000ff;
+      --glass-bg: rgba(15, 15, 20, 0.7);
+      --glass-border: rgba(255, 255, 255, 0.15);
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .material-icons-round {
+      font-family: 'Material Icons Round';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-smoothing: antialiased;
+    }
+    .glass-morphism {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+    }
+    .neon-glow-primary {
+      box-shadow: 0 0 20px rgba(0, 242, 255, 0.4), inset 0 0 10px rgba(0, 242, 255, 0.2);
+    }
+    .neon-glow-text {
+      text-shadow: 0 0 8px rgba(0, 242, 255, 0.6);
+    }
+    .icon-3d {
+      filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.4)) drop-shadow(0 0 5px rgba(0, 242, 255, 0.3));
+    }
+    .dynamic-island {
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(25px);
+      border: 0.5px solid rgba(255, 255, 255, 0.1);
+    }
+    .game-mockup {
+      background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCWe9hzCwRKOnEswwm_s29wZ_zQ6WUJS6dN6i-fC2CVNSqjy8ZUWiGMtoWR5FC9Pd_znnj9ZDhmHVh6gvpmGOsDatxd6YpsgNHaOSkIEtaChoigJLnicEoiXEoXznViPIzG9vjWeoE3UgHyJpQ9-4f_GuYCFnQsCNFIyt685XK0YZrEddN7hKbngoJCoSAq4r3B_UPYs2rQiQ6FQt37AadMWueJfLDZ8nvOK8cxB_PfNOTr17IR6wwfA-jHfovv2YkYU3hGt2mLwMw);
+      background-size: cover;
+      background-position: center;
+    }
+    .th-logo {
+      background: linear-gradient(135deg, #00f2ff 0%, #7000ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
+    }
+    .orbit-btn {
+      position: absolute;
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .orbit-active .satellite-1 { transform: translate(-70px, -60px); }
+    .orbit-active .satellite-2 { transform: translate(-95px, 15px); }
+    .orbit-active .satellite-3 { transform: translate(-70px, 90px); }
+    .ios-shadow {
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    }
+    .ios-blur {
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    .blur-bg {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .pattern-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(36px, 1fr));
+      gap: 8px;
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    body {
+      min-height: 100dvh;
+      -webkit-tap-highlight-color: transparent;
+      overscroll-behavior-y: contain;
+    }
+  </style>
+  <script type="importmap">
+  {
+    "imports": {
+      "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+      "react/": "https://esm.sh/react@^19.2.4/",
+      "react": "https://esm.sh/react@^19.2.4",
+      "@google/genai": "https://esm.sh/@google/genai@^1.41.0"
+    }
+  }
+  </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-300">
+  <div id="root"></div>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(err => console.log('SW registration failed:', err));
+      });
+    }
+  </script>
+</body>
+</html>
